@@ -10,7 +10,7 @@ export const serverSideProps: GetServerSideProps = async (cxt) => {
     
     const { bankHolidays, notFound } = await getBankHolidays(countryCode, year)
     
-if ( notFound || !bankHolidays ) {
+if ( notFound || !bankHolidays) {
         return {
             notFound: true
         }

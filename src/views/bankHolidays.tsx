@@ -10,7 +10,7 @@ export function BankHolidaysView({ bankHolidays,year,countryCode,country,nextBan
     const router = useRouter()
     const currentYear=new Date().getFullYear()
     const yearInput = useRef<HTMLInputElement>(null)
-    console.log(bankHolidays)
+    
     return <main>
         <Header>
         <section className='flex sm:flex-row flex-col justify-between items-center p-5 bg-white '>
@@ -18,8 +18,11 @@ export function BankHolidaysView({ bankHolidays,year,countryCode,country,nextBan
             <Flag countryName={country.countryName } countryCode={country.countryCode} />
             <h2 className='text-2xl'>{country.countryName}</h2>
             </div>
-            <div className="flex p-3 bg-blue-400 justify-around rounded-md ">
-            <input ref={yearInput} className='bg-transparent border-white border-2 text-white w-6/12 p-2' type='number' defaultValue={year||currentYear} />
+                <div className="flex p-3 bg-blue-400 justify-around rounded-md gap-5">
+             <form className="w-[5rem]">
+                  <input ref={yearInput} min="1973" max="2073"  className='bg-transparent border-white border-2 text-white p-2 w-full ' type='number' defaultValue={year || currentYear} />        
+            </form>
+          
             <Button  onClick={()=>yearInput.current?.value&& router.push(`/${countryCode}/${yearInput.current.value}`)}>look up year</Button>
             </div>
         </section>
