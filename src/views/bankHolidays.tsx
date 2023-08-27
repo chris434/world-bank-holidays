@@ -43,9 +43,9 @@ export function BankHolidaysView({ bankHolidays,year,countryCode,country,nextBan
           </div>
         </Header>
         <hr className='border-1 border-gray-500 ' />
-        <ul className='flex justify-center list-none gap-5 sm:flex-row  flex-col-reverse w-full mt-5'>
+        <ul className='flex justify-center list-none gap-5 md:flex-row  flex-col-reverse w-full mt-5'>
         
-            <ul className=' sm:w-6/12 w-full'>
+            <ul className=' md:w-6/12 w-full'>
             
             {bankHolidays.map((bankHoliday, i) => {
                 console.log(bankHoliday)
