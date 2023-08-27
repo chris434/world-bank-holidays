@@ -11,7 +11,8 @@ type ComponentBankHolidayProps = {
 }
 
 export function BankHoliday({ bankHoliday,bankHolidays,i,title,className='' }: ComponentBankHolidayProps) {
-    const PILL_CLASS='bg-blue-400 rounded-2xl p-2 text-white'
+    const PILL_CLASS = 'bg-blue-400 rounded-2xl p-2 text-white'
+    console.log(bankHoliday)
     const { localName, launchYear, counties, global,date } = bankHoliday
                 const currentDate = new Date(date)
                 const previousDate =bankHolidays? new Date(bankHolidays[i?i-1:0].date):null

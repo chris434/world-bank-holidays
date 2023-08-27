@@ -6,7 +6,7 @@ export async function getNextBankHoliday(bankHolidays: BankHolidayProps[],year:s
     const currentMonth =new Date().getMonth()
     const currentYear = new Date().getFullYear()
 
-    if (currentYear < parseInt(year)) {
+    if (currentYear !== parseInt(year)) {
 
         const { bankHolidays: currentBankHolidays} = await getBankHolidays(countryCode, currentYear.toString())
 

@@ -9,7 +9,8 @@ import { Header } from '@/components/header'
 export function BankHolidaysView({ bankHolidays,year,countryCode,country,nextBankHoliday }: bankHolidaysProps) {
     const router = useRouter()
     const currentYear=new Date().getFullYear()
-    const yearInput=useRef<HTMLInputElement>(null)
+    const yearInput = useRef<HTMLInputElement>(null)
+    console.log(bankHolidays)
     return <main>
         <Header>
         <section className='flex sm:flex-row flex-col justify-between items-center p-5 bg-white '>
@@ -30,7 +31,7 @@ export function BankHolidaysView({ bankHolidays,year,countryCode,country,nextBan
             <ul className=' sm:w-6/12 w-full'>
             
             {bankHolidays.map((bankHoliday, i) => {
-
+                console.log(bankHoliday)
          return <Fragment key={i}>
                     <BankHoliday i={i} bankHolidays={bankHolidays} bankHoliday={bankHoliday} />
                 </Fragment>

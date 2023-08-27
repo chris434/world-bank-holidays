@@ -8,8 +8,8 @@ export const serverSideProps: GetServerSideProps = async (cxt) => {
     const countryCode = params?.countryCode as string
     const year=params?.year as string||new Date().getFullYear().toString()
     
-   const {bankHolidays,notFound}= await getBankHolidays(countryCode,year)
-
+    const { bankHolidays, notFound } = await getBankHolidays(countryCode, year)
+    
 if ( notFound || !bankHolidays ) {
         return {
             notFound: true
